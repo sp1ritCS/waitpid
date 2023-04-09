@@ -19,8 +19,10 @@
 TARGET = waitpid
 BUILDDIR := build
 
+VERSION := 1.0
+
 CC = gcc
-CFLAGS = -Wall -Wextra -O2
+CFLAGS = -Wall -Wextra -O2 '-DWAITPID_VERSION="$(VERSION)"'
 LDFLAGS := 
 
 SRCS = $(wildcard *.c)
