@@ -1,0 +1,37 @@
+waitpid - a simple command-line utility to wait for a foreign process
+to exit.
+
+Description
+-----------
+The `waitpid` utility is a simple command-line tool that waits for a
+process with a given PID to exit.
+
+Since it uses the pidfd_open system call, the tool is only compatible
+with operating systems/kernels that implement the pidfd family of
+syscalls, like GNU/Linux.
+
+Installation
+------------
+To install `waitpid`, run the following commands:
+
+    $ make
+    $ install -m755 build/waitpid <prefix>/bin/waitpid
+
+Usage
+-----
+To use `waitpid`, simply provide the PID of the process you want to wait for as a positional argument:
+
+    $ waitpid 1234
+
+You can also specify the following options:
+
+    -t, --timeout <seconds>       Set a timeout in seconds
+    -s, --timeout-status <status> Set the timeout status (default: 124)
+    -v, --verbose                 Increase verbosity
+    -h, --help                    Display help information and exit
+    -V, --version                 Display version information and exit
+
+License
+-------
+This software is licensed under the GNU General Public License version
+3 or later. See the COPYING file for more information.
